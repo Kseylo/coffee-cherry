@@ -1,0 +1,187 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}Меню{% endblock title %}
+{% block content %}
+<section class="menu">
+    <nav class="menu__nav">
+      <h1 class="menu__nav-header">МЕНЮ</h1>
+      <ul class="menu__nav-list">
+        <a href="#coffee" class="menu__nav-link">КОФЕ</a>
+        <a href="#tea" class="menu__nav-link">ЧАЙ</a>
+        <a href="#milk" class="menu__nav-link">МОЛОЧНЫЕ КОКТЕЙЛИ</a>
+      </ul>
+    </nav>
+  </section>
+        <section class="all-menu">
+          <h1 class="all-menu__header" id="coffee">КОФЕ</h1>
+          <ul class="all-menu__list">
+            {% for coffee in all_drinks_list %}
+            {% if coffee.type == 'кофе' %}
+
+            <div class="card">
+              <div class="card-side front">
+
+              
+            
+             <figure class="all-menu__list__item">
+               <img
+               src="{% static 'images/latte.webp' %}"
+               alt="latte"
+               class="all-menu__list__img"
+               />
+              </a>
+              <figcaption class="all-menu__list__text">{{coffee.name}}</figcaption>
+              <div class="all-menu__list__text-block">
+                {% if coffee.size_small and coffee.size_big is not null %}
+                <select name="size" id="size" style="border:none;background-color:white">
+                <option value="big">
+                  <span class="all-menu__list__text-block__size"
+                  >{{coffee.size_big}} мл.</span
+                  >
+                  <span class="all-menu__list__text-block__price"
+                  >{{coffee.price_big}} руб.</span
+                  >
+                </option>
+                <option value="small">
+                  <span class="all-menu__list__text-block__size"
+                  >{{coffee.size_small}} мл.</span
+                  >
+                  <span class="all-menu__list__text-block__price"
+                  >{{coffee.price_small}} руб.</span
+                    >
+                  </option>
+                </select>
+                {% elif coffee.size_small is null %}
+                <span class="all-menu__list__text-block__size"
+                >{{coffee.size_big}} мл.</span
+                >
+                <span class="all-menu__list__text-block__price"
+                >{{coffee.price_big}} руб.</span
+                >
+                {% elif coffee.size_big is null %}
+                <span class="all-menu__list__text-block__size"
+                >{{coffee.size_small}} мл.</span
+                >
+                <span class="all-menu__list__text-block__price"
+                >{{coffee.price_small}} руб.</span
+                >
+                {% endif %}
+                </div>
+
+              </div>
+            </figure>
+          </div>   
+            {% endif %}
+          {% endfor %}
+          </div>
+        </ul>
+      </section>
+      
+      <section class="all-menu">
+        <h1 class="all-menu__header" id="tea">ЧАЙ</h1>
+        <ul class="all-menu__list">
+          {% for tea in all_drinks_list %} {% if tea.type == "чай" %}
+          <figure class="all-menu__list__item">
+      <img
+      src="{% static 'images/latte.webp' %}"
+          alt="latte"
+          class="all-menu__list__img"
+        />
+      </a>
+      <figcaption class="all-menu__list__text">{{tea.name}}</figcaption>
+      <div class="all-menu__list__text-block">
+        {% if tea.size_small and tea.size_big is not null %}
+        <select name="size" id="size" style="border:none;background-color:white">
+          <option value="big">
+            <span class="all-menu__list__text-block__size"
+            >{{tea.size_big}} мл.</span
+            >
+            <span class="all-menu__list__text-block__price"
+            >{{tea.price_big}} руб.</span
+            >
+          </option>
+          <option value="small">
+            <span class="all-menu__list__text-block__size"
+            >{{tea.size_small}} мл.</span
+            >
+            <span class="all-menu__list__text-block__price"
+            >{{tea.price_small}} руб.</span
+            >
+          </option>
+          
+        </select>
+        {% elif tea.size_small is null %}
+      <span class="all-menu__list__text-block__size"
+      >{{tea.size_big}} мл.</span
+      >
+      <span class="all-menu__list__text-block__price"
+      >{{tea.price_big}} руб.</span
+      >
+      {% elif tea.size_big is null %}
+      <span class="all-menu__list__text-block__size"
+            >{{tea.size_small}} мл.</span
+            >
+            <span class="all-menu__list__text-block__price"
+            >{{tea.price_small}} руб.</span
+            >
+      {% endif %}
+        
+      </div>
+    </figure>
+    {% endif %} {% endfor %}
+  </ul>
+</section>
+<section class="all-menu">
+  <h1 class="all-menu__header" id="milk">МОЛОЧНЫЕ КОКТЕЙЛИ</h1>
+  <ul class="all-menu__list">
+    {% for milk in all_drinks_list %} {% if milk.type == "молочный" %}
+    <figure class="all-menu__list__item">
+        <img
+          src="{% static 'images/latte.webp' %}"
+          alt="latte"
+          class="all-menu__list__img"
+        />
+      </a>
+      <figcaption class="all-menu__list__text">{{milk.name}}</figcaption>
+      <div class="all-menu__list__text-block">
+        {% if milk.size_small and milk.size_big is not null %}
+        <select name="size" id="size" style="border:none;background-color:white">
+          <option value="big">
+            <span class="all-menu__list__text-block__size"
+            >{{milk.size_big}} мл.</span
+            >
+            <span class="all-menu__list__text-block__price"
+            >{{milk.price_big}} руб.</span
+            >
+          </option>
+          <option value="small">
+            <span class="all-menu__list__text-block__size"
+            >{{milk.size_small}} мл.</span
+            >
+            <span class="all-menu__list__text-block__price"
+            >{{milk.price_small}} руб.</span
+            >
+          </option>
+          
+        </select>
+        {% elif milk.size_small is null %}
+      <span class="all-menu__list__text-block__size"
+      >{{milk.size_big}} мл.</span
+      >
+      <span class="all-menu__list__text-block__price"
+      >{{milk.price_big}} руб.</span
+      >
+      {% elif milk.size_big is null %}
+      <span class="all-menu__list__text-block__size"
+            >{{milk.size_small}} мл.</span
+            >
+            <span class="all-menu__list__text-block__price"
+            >{{milk.price_small}} руб.</span
+            >
+      {% endif %}
+        
+      </div>
+    </figure>
+    {% endif %} {% endfor %}
+  </ul>
+</section>
+  {% endblock content %}
