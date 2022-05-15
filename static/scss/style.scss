@@ -785,48 +785,83 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
     gap: 2rem;
-    &__item {
+  }
+  .card {
+    perspective: 150rem;
+    position: relative;
+    height: 55rem;
+    max-width: 40rem;
+    box-shadow: none;
+    background: none;
+    margin: 3rem 0;
+  }
+  
+  .card-side {
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0;
+    left: 0;
+    border: solid 0.2rem #1b545d;
+    border-radius: 1rem;
+    &-text-block {
+      margin: 2rem 0;
+      font-size: 3.5rem;
+      color: $main-color-secondary;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      border: solid 0.2rem #1b545d;
-      border-radius: 1rem;
-    }
-    &__img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 1rem;
-    }
-    &__text {
-      margin-top: 2.5rem;
-      font-size: 4rem;
-      color: $main-color-secondary;
-      @include respond(tab-land) {
-        font-size: 3rem;
-      }
-      @include respond(phone) {
-        font-size: 2rem;
-      }
-    }
-    &__text-block {
-      margin: 2.5rem 0;
-      font-size: 2.5rem;
-      color: $main-color-secondary;
-      width: 40rem;
-      display: flex;
-      justify-content: space-evenly;
       @include respond(tab-port) {
         font-size: 2rem;
       }
       @include respond(phone) {
         font-size: 1.8rem;
       }
-      &__size {
-      }
-      &__price {
-      }
     }
+    &__description{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: $white-color;
+      font-size: 2.6rem;
+      line-height: 3.7rem;
+    }
+    &__sizes{
+      font-size: 3rem;
+      width: 60%;
+      color: $main-color-secondary;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.4rem;
+    }
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $main-color;
+    padding: 2rem;
+  }
+  
+  .card-side.front {
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+  }
+  
+  .card:hover .card-side.front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card-side.back {
+    transform: rotateY(0deg);
   }
 }
 
