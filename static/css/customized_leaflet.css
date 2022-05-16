@@ -1,0 +1,8 @@
+.leaflet-popup-content-wrapper{
+    background: #1b545d;
+    color: white;
+    opacity: 0.9;
+}
+.leaflet-popup-content p {
+    font-size: 14px
+}

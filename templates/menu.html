@@ -12,7 +12,8 @@
     </nav>
   </section>
   <section class="all-menu">
-    <h1 class="all-menu__header" id="coffee">КОФЕ</h1>
+    <div id="coffee"><h1 class="all-menu__header" id="coffee">КОФЕ</h1></div>
+    
     <ul class="all-menu__list">
     {% for coffee in all_drinks_list %} {% if coffee.type == "кофе" %}
     <div class="card">
@@ -51,7 +52,7 @@
   </ul>
   </section>
   <section class="all-menu">
-    <h1 class="all-menu__header" id="tea">ЧАЙ</h1>
+    <div id="tea"><h1 class="all-menu__header" id="tea">ЧАЙ</h1></div>
     <ul class="all-menu__list">
     {% for tea in all_drinks_list %} {% if tea.type == "чай" %}
     <div class="card">
@@ -90,7 +91,7 @@
   </ul>
   </section>
         <section class="all-menu">
-          <h1 class="all-menu__header" id="milk">МОЛОЧНЫЕ КОКТЕЙЛИ</h1>
+          <div id="milk"><h1 class="all-menu__header" id="milk">МОЛОЧНЫЕ КОКТЕЙЛИ</h1></div>
           <ul class="all-menu__list">
           {% for milk in all_drinks_list %} {% if milk.type == "молочный" %}
           <div class="card">

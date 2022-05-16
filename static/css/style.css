@@ -675,9 +675,13 @@ p {
 }
 
 .location-page {
-  align-self: center;
-  justify-self: center;
   grid-column: center-start/center-end;
+}
+@media only screen and (max-width: 56.25em) {
+  .location-page {
+    grid-column: full-start/full-end;
+    padding: 0 1rem;
+  }
 }
 .location-page__header {
   display: flex;
@@ -696,11 +700,9 @@ p {
     font-size: 5rem;
   }
 }
-.location-page__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-  grid-template-rows: repeat(2, min-content);
-  gap: 1rem;
+
+#map {
+  height: 75rem;
 }
 
 .cafe {
