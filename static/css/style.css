@@ -51,10 +51,13 @@ body {
 }
 
 .header {
-  position: sticky;
-  top: 0;
   background-color: #1b545d;
   grid-column: full-start/full-end;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
   z-index: 5000;
 }
 

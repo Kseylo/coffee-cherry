@@ -96,10 +96,12 @@ body {
 }
 // === header ===
 .header {
-  position: sticky;
-  top: 0;
   background-color: $main-color;
   grid-column: full-start / full-end;
+}
+.sticky {
+  position: sticky;
+  top: 0;
   z-index: 5000;
 }
 .logo {
