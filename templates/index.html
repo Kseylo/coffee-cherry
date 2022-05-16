@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}Кофейная вишня{% endblock title %}
 {% block content %}
-<section id='section' class="hero">
+<section id='section' class="hero section">
     <h1 class="hero__header">COFFEE CHERRY</h1>
   </section>
-  <section class="about">
+  <section class="about section">
     <div class="about__wrapper">
       <h1 class="about__header">О НАС</h1>
       <p class="about__text">
@@ -18,7 +18,7 @@
       class="about__img"
     />
   </section>
-  <section class="products">
+  <section class="products section">
     <h1 class="products__header">ПРОДУКЦИЯ</h1>
     <div class="products__wrapper">
       <figure class="wrapper__1">
@@ -48,7 +48,7 @@
       <a href="{% url 'menu' %}" class="btn products__button">МЕНЮ</a>
     </div>
   </section>
-  <section class="locations">
+  <section class="locations section">
     <div class="locations__wrapper">
       <h1 class="locations__header">КОФЕЙНИ</h1>
       <p class="locations__text">

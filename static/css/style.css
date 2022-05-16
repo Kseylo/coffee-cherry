@@ -50,6 +50,15 @@ body {
   color: #adb5bd;
 }
 
+.section {
+  transition: transform 1.2s, opacity 1.2s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
 .header {
   background-color: #1b545d;
   grid-column: full-start/full-end;

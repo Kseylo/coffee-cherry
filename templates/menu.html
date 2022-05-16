@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %}
 {% block title %}Меню{% endblock title %}
 {% block content %}
-<section id='section' class="menu">
+<section id='section' class="menu section">
     <nav class="menu__nav">
       <h1 class="menu__nav-header">МЕНЮ</h1>
       <ul class="menu__nav-list">
@@ -11,7 +11,7 @@
       </ul>
     </nav>
   </section>
-  <section class="all-menu">
+  <section class="all-menu section">
     <div id="coffee"><h1 class="all-menu__header" id="coffee">КОФЕ</h1></div>
     
     <ul class="all-menu__list">
@@ -51,7 +51,7 @@
     {% endif %}{% endfor %}
   </ul>
   </section>
-  <section class="all-menu">
+  <section class="all-menu section">
     <div id="tea"><h1 class="all-menu__header" id="tea">ЧАЙ</h1></div>
     <ul class="all-menu__list">
     {% for tea in all_drinks_list %} {% if tea.type == "чай" %}
@@ -90,7 +90,7 @@
     {% endif %}{% endfor %}
   </ul>
   </section>
-        <section class="all-menu">
+        <section class="all-menu section">
           <div id="milk"><h1 class="all-menu__header" id="milk">МОЛОЧНЫЕ КОКТЕЙЛИ</h1></div>
           <ul class="all-menu__list">
           {% for milk in all_drinks_list %} {% if milk.type == "молочный" %}

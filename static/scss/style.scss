@@ -94,6 +94,14 @@ body {
     color: $white-color-secondary;
   }
 }
+.section {
+  transition: transform 1.2s, opacity 1.2s;
+}
+
+.section--hidden{
+  opacity: 0;
+  transform: translateY(8rem);
+}
 // === header ===
 .header {
   background-color: $main-color;

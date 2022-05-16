@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}О нас{% endblock title %}
 {% block content %}
-<section id='section' class="about-hero">
+<section id='section' class="about-hero section">
     <h1 class="about-hero__header">Наша История</h1>
   </section>
-  <section class="begin">
+  <section class="begin section">
     <div class="begin__wrapper"> 
       <h1 class="begin__header">Наше Начало</h1>
       <p class="begin__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, vel blanditiis at quos quisquam quia numquam modi, cumque unde, voluptates necessitatibus nam! Ullam pariatur facilis voluptate eum illo vel nesciunt.</p>
@@ -12,7 +12,7 @@
     {% load static %}
     <img src="{% static 'images/begin-img.webp'%}" alt="наша начало фото" class="begin__img">
   </section>
-  <section class="object">
+  <section class="object section">
     <img src="{% static 'images/object-img.webp'%}" alt="наши цели фото" class="object__img">
     <div class="object__wrapper"> 
       <h1 class="object__header">Наши цели</h1>
